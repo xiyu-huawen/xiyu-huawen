@@ -1,0 +1,226 @@
+[
+  {
+    "id": "gene",
+    "title": "什么是纹样的「文化基因」？",
+    "pattern": "PAT-001",
+    "source": "《序言2—技术基础》第二、三节",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "symmetry",
+    "title": "对称为什么让我们感到安定？",
+    "pattern": "PAT-005",
+    "source": "《序言2—技术基础》构图基因、锡镶转译路径；PAT-005映射表",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "lotus",
+    "title": "四叶莲心：窗内的秩序与清正",
+    "pattern": "PAT-001",
+    "source": "PAT-001《客家漏石窗纹样》基因表及映射表；《序言2—技术基础》第六节",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "star",
+    "title": "八角星：八方之间的祝愿",
+    "pattern": "PAT-005",
+    "source": "PAT-005《八角星纹》原图注记、表1—表3",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "tin",
+    "title": "一片锡，如何成为器物上的光？",
+    "pattern": "PAT-004",
+    "source": "《序言1—项目背景》威海锡镶、材料与工序部分",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "evidence",
+    "title": "传统寓意，也需要证据链",
+    "pattern": "PAT-005",
+    "source": "《序言1—项目背景》文化证据链；《序言2—技术基础》语义基因",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "translate",
+    "title": "为什么“好看的图”不等于“可制作的图”？",
+    "pattern": "PAT-001",
+    "source": "《序言2—技术基础》第六节；《第一部分 项目计划》工艺校验部分",
+    "source_scope": "依据项目提供的标注文档与技术资料编写。一般性知识与具体样本记录分别保留；关联纹样的图元、映射状态及原图出处，以该纹样档案为准。",
+    "source_refs": []
+  },
+  {
+    "id": "weihai-tin",
+    "title": "锡光落在紫砂上：威海锡镶怎样因器而生",
+    "pattern": "PAT-057",
+    "source": "威海市文化和旅游局《威海非遗—锡镶技艺》（2017-02-07）",
+    "source_scope": "机构文章用于说明地方工艺历史、材料和装饰位置，不是本平台模型的制作认证；关联鹤纹是观察练习，并不证明PAT-057就是该文所举实物。",
+    "source_refs": [
+      {
+        "title": "威海非遗—锡镶技艺",
+        "url": "https://wlj.weihai.gov.cn/art/2017/2/7/art_13688_873882.html",
+        "organization": "威海市文化和旅游局",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "auspicious-rebus",
+    "title": "图案如何说祝福：寓意、谐音与组合",
+    "pattern": "PAT-035",
+    "source": "故宫博物院知识词条《吉祥图案》",
+    "source_scope": "词条提供传统装饰的概括与例子；PAT-035的具体编码、关系状态和出处仍以其原始档案为准。",
+    "source_refs": [
+      {
+        "title": "吉祥图案",
+        "url": "https://www.dpm.org.cn/lemmas/241317.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "lotus-vine",
+    "title": "同是莲花，为什么还要看枝蔓与搭配",
+    "pattern": "PAT-004",
+    "source": "故宫博物院知识词条《缠枝莲花纹》",
+    "source_scope": "本篇讨论莲花题材与缠枝结构的一般区别，不将PAT-004等同于缠枝莲实物，也不替它补写历史。",
+    "source_refs": [
+      {
+        "title": "缠枝莲花纹",
+        "url": "https://www.dpm.org.cn/lemmas/239646.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "return-border",
+    "title": "回纹为何适合沿着边走",
+    "pattern": "PAT-008",
+    "source": "故宫博物院知识词条《回纹》",
+    "source_scope": "家具词条提供回纹的使用例子和地域解释；它不证明本项目PAT-008的具体流传路线或断代。",
+    "source_refs": [
+      {
+        "title": "回纹",
+        "url": "https://www.dpm.org.cn/lemmas/245233.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "ruyi-cloud",
+    "title": "一朵云，如何让人想起如意",
+    "pattern": "PAT-017",
+    "source": "故宫博物院知识词条《如意纹》《如意式云头纹》",
+    "source_scope": "两条词条用于解释形态名称及部分工艺品的装饰背景，不是PAT-017样本的直接年代证据。",
+    "source_refs": [
+      {
+        "title": "如意纹",
+        "url": "https://www.dpm.org.cn/lemmas/242112.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      },
+      {
+        "title": "如意式云头纹",
+        "url": "https://www.dpm.org.cn/lemmas/244511.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "ideal-flower",
+    "title": "宝相花：一朵被设计出来的花",
+    "pattern": "PAT-047",
+    "source": "故宫博物院知识词条《宝相花》",
+    "source_scope": "词条介绍宝相花这一题材的一般构成与流行背景；不据此给PAT-047具体样本断代。",
+    "source_refs": [
+      {
+        "title": "宝相花",
+        "url": "https://www.dpm.org.cn/lemmas/242132.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "roundel-order",
+    "title": "圆中有一境：团花与团窠怎样组织画面",
+    "pattern": "PAT-054",
+    "source": "故宫博物院知识词条《团花》《团窠》",
+    "source_scope": "两条词条帮助理解圆形轮廓与纺织构成单位；PAT-054的具体意义仍以其档案证据为准。",
+    "source_refs": [
+      {
+        "title": "团花",
+        "url": "https://www.dpm.org.cn/lemmas/239377.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      },
+      {
+        "title": "团窠",
+        "url": "https://www.dpm.org.cn/lemmas/245409.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "eight-attributes",
+    "title": "不画人物，也能讲故事：认识暗八仙",
+    "pattern": "PAT-036",
+    "source": "故宫博物院知识词条《暗八仙》",
+    "source_scope": "词条提供暗八仙的一般识别方式；不据此认定PAT-036每个局部的身份，局部名称以原档案为准。",
+    "source_refs": [
+      {
+        "title": "暗八仙",
+        "url": "https://www.dpm.org.cn/lemmas/241137.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "antiquity-stilllife",
+    "title": "博古不是“旧”：器物也能成为画中主角",
+    "pattern": "PAT-037",
+    "source": "聂崇正《静物画与博古图》，故宫博物院《紫禁城》2022年第10期",
+    "source_scope": "文章用于解释博古图题材与观看角度；PAT-037的器物身份、来源和年代不由这篇概论替代确认。",
+    "source_refs": [
+      {
+        "title": "静物画与博古图",
+        "url": "https://www.dpm.org.cn/explode/others/258183.html",
+        "organization": "故宫博物院",
+        "accessed": "2026-11-10"
+      }
+    ]
+  },
+  {
+    "id": "living-heritage",
+    "title": "让传统活下去，为什么还需要今天的人参与",
+    "pattern": "PAT-004",
+    "source": "UNESCO活态遗产资料页与《非物质文化遗产保护伦理原则》",
+    "source_scope": "引文说明活态传承的一般理念，不表示威海锡镶或本平台已列入UNESCO名录、得到认证或获得其背书。关联档案仅用于练习记录创作过程。",
+    "source_refs": [
+      {
+        "title": "Safeguarding without freezing",
+        "url": "https://ich.unesco.org/en/safeguarding-00012",
+        "organization": "联合国教科文组织（UNESCO）",
+        "accessed": "2026-11-10"
+      },
+      {
+        "title": "Ethics and Intangible Cultural Heritage",
+        "url": "https://ich.unesco.org/en/ethics-and-ich-00866",
+        "organization": "联合国教科文组织（UNESCO）",
+        "accessed": "2026-11-10"
+      }
+    ]
+  }
+]

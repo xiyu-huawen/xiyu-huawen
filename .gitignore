@@ -1,0 +1,13 @@
+.DS_Store
+.venv/
+node_modules/
+frontend/dist/
+runtime/
+.env
+outputs/*.tar*
+logs/*
+__pycache__/
+.pytest_cache/
+.venv310/
+.playwright-cli/
+output/

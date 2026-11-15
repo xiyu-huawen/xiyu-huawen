@@ -1,0 +1,111 @@
+@font-face {
+  font-family: XiyuSerif;
+  src: url('/fonts/NotoSerifSC.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+:root {
+  --font-serif: XiyuSerif, 'Songti SC', 'STSong', 'STSongti-SC-Regular', 'SimSun', 'NSimSun', 'Noto Serif CJK SC', 'Source Han Serif SC', 'Noto Serif SC', serif;
+  --font-fangsong: XiyuSerif, 'FangSong', 'STFangsong', 'FangSong_GB2312', 'Noto Serif CJK SC', 'Source Han Serif SC', 'SimSun', serif;
+  --seal-cinnabar: #B02B2B;
+  --seal-cinnabar-dark: #7F1D1D;
+  --accent-seal-bg: rgba(176, 43, 43, .16);
+}
+
+html, body {
+  font-family: var(--font-serif);
+}
+
+p, small, .subtle, .theatre-caption, .direction-rail small, .explanation, .description {
+  font-family: var(--font-fangsong);
+}
+
+.direction-rail > button, .creation-stage {
+  position: relative;
+}
+
+.xiyu-colophon {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 7px 8px;
+  color: #F0E7D8;
+  background: rgba(9, 12, 16, .82);
+  border: 1px solid rgba(176, 43, 43, .58);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(7px);
+  pointer-events: none;
+  z-index: 6;
+}
+
+.xiyu-direction-colophon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  max-width: 68%;
+}
+
+.xiyu-stage-colophon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.xiyu-colophon-copy {
+  display: grid;
+  gap: 5px;
+  text-align: right;
+}
+
+.xiyu-colophon-inscription {
+  color: #E9D9C0;
+  font-family: var(--font-fangsong);
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.xiyu-colophon-number {
+  color: #D9A29A;
+  font-family: var(--font-serif);
+  font-size: 8px;
+  line-height: 1.35;
+  letter-spacing: .06em;
+}
+
+.xiyu-colophon-seal {
+  display: block;
+  width: 29px;
+  height: 33px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  background: var(--seal-cinnabar);
+  box-shadow: 0 0 0 1px rgba(233, 217, 192, .3);
+}
+
+@media (max-width: 760px) {
+  .xiyu-stage-colophon {
+    top: 8px;
+    right: 8px;
+  }
+  .xiyu-colophon {
+    gap: 6px;
+    padding: 5px 6px;
+  }
+  .xiyu-colophon-inscription {
+    font-size: 9px;
+    letter-spacing: .07em;
+  }
+  .xiyu-colophon-seal {
+    width: 25px;
+    height: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xiyu-colophon {
+    backdrop-filter: none;
+  }
+}

@@ -1,0 +1,10 @@
+### Result
+[{"route":"original","width":1440,"overflow":false},{"route":"knowledge","width":1440,"overflow":false},{"route":"library","width":1440,"overflow":false},{"route":"atlas","width":1440,"overflow":false},{"route":"community","width":390,"overflow":false},{"route":"original","width":390,"overflow":false},{"route":"knowledge","width":390,"overflow":false},{"route":"library","width":390,"overflow":false},{"route":"atlas","width":390,"overflow":false}]
+### Ran Playwright code
+```js
+await (async(page)=>{await page.setViewportSize({width:1440,height:1000});const result=[];for(const [name,route] of [['共创工坊','original'],['纹样书房','knowledge'],['纹样档案','library'],['纹脉图谱','atlas']]){await page.getByRole('navigation',{name:'主导航'}).getByRole('link',{name,exact:true}).click();await page.waitForTimeout(500);await page.screenshot({path:'output/playwright/edition-13-'+route+'-desktop.png',fullPage:true});result.push({route,width:1440,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2)});}await page.goto('http://localhost:8098/#community');await page.locator('.community-card').first().waitFor();await page.screenshot({path:'output/playwright/edition-13-community-desktop.png',fullPage:true});await page.setViewportSize({width:390,height:844});for(const route of ['community','original','knowledge','library','atlas']){await page.goto('http://localhost:8098/#'+route);await page.waitForTimeout(650);await page.screenshot({path:'output/playwright/edition-13-'+route+'-mobile.png',fullPage:true});const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);result.push({route,width:390,overflow});if(overflow)throw Error('overflow '+route);}return result;}
+)(page);
+```
+### Page
+- Page URL: http://localhost:8098/#atlas
+- Page Title: 锡语华纹 · 让中国祝福，入器成纹

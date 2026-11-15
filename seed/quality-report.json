@@ -1,0 +1,367 @@
+{
+  "stats": {
+    "patterns": 60,
+    "genes": 238,
+    "gene_occurrences": 402,
+    "vectors": 145
+  },
+  "conflicts": [
+    {
+      "code": "P-LK-001",
+      "first": "PAT-001",
+      "other": "PAT-002",
+      "names": [
+        "镂空适配",
+        "透空适配"
+      ]
+    },
+    {
+      "code": "P-BK-003",
+      "first": "PAT-001",
+      "other": "PAT-002",
+      "names": [
+        "边框承重",
+        "边框收边"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-014",
+      "names": [
+        "锦地繁花",
+        "四瓣清正"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-016",
+      "names": [
+        "锦地繁花",
+        "小巧可爱"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-017",
+      "names": [
+        "锦地繁花",
+        "如意安康"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-018",
+      "names": [
+        "锦地繁花",
+        "鳞甲层叠"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-019",
+      "names": [
+        "锦地繁花",
+        "龟背延年"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-021",
+      "names": [
+        "锦地繁花",
+        "宁静致远"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-022",
+      "names": [
+        "锦地繁花",
+        "光明普照"
+      ]
+    },
+    {
+      "code": "S-HK-041",
+      "first": "PAT-012",
+      "other": "PAT-025",
+      "names": [
+        "锦地繁花",
+        "如意安康"
+      ]
+    },
+    {
+      "code": "C-ZD-001",
+      "first": "PAT-003",
+      "other": "PAT-026",
+      "names": [
+        "轴对称构图",
+        "轴对称"
+      ]
+    },
+    {
+      "code": "M-HW-063",
+      "first": "PAT-033",
+      "other": "PAT-036",
+      "names": [
+        "桃纹",
+        "葫芦"
+      ]
+    },
+    {
+      "code": "M-HW-064",
+      "first": "PAT-034",
+      "other": "PAT-036",
+      "names": [
+        "葡萄纹",
+        "扇子"
+      ]
+    },
+    {
+      "code": "M-HW-065",
+      "first": "PAT-035",
+      "other": "PAT-036",
+      "names": [
+        "三多纹",
+        "花篮"
+      ]
+    },
+    {
+      "code": "S-HW-063",
+      "first": "PAT-035",
+      "other": "PAT-036",
+      "names": [
+        "多福多寿多子",
+        "八仙过海"
+      ]
+    },
+    {
+      "code": "S-HW-064",
+      "first": "PAT-035",
+      "other": "PAT-036",
+      "names": [
+        "吉祥三多",
+        "吉祥八宝"
+      ]
+    },
+    {
+      "code": "M-HW-068",
+      "first": "PAT-037",
+      "other": "PAT-038",
+      "names": [
+        "兰花盆景",
+        "万字飘带纹"
+      ]
+    },
+    {
+      "code": "M-HW-069",
+      "first": "PAT-037",
+      "other": "PAT-038",
+      "names": [
+        "花瓶花卉",
+        "海水江崖纹"
+      ]
+    },
+    {
+      "code": "C-ZD-001",
+      "first": "PAT-003",
+      "other": "PAT-038",
+      "names": [
+        "轴对称构图",
+        "轴对称〔复用〕"
+      ]
+    },
+    {
+      "code": "M-HW-069",
+      "first": "PAT-037",
+      "other": "PAT-039",
+      "names": [
+        "花瓶花卉",
+        "寿字纹"
+      ]
+    },
+    {
+      "code": "M-HW-069",
+      "first": "PAT-037",
+      "other": "PAT-040",
+      "names": [
+        "花瓶花卉",
+        "海水江崖纹"
+      ]
+    },
+    {
+      "code": "C-ZD-001",
+      "first": "PAT-003",
+      "other": "PAT-040",
+      "names": [
+        "轴对称构图",
+        "轴对称〔复用〕"
+      ]
+    },
+    {
+      "code": "S-HW-071",
+      "first": "PAT-039",
+      "other": "PAT-040",
+      "names": [
+        "长寿百岁",
+        "江山永固"
+      ]
+    },
+    {
+      "code": "S-HW-072",
+      "first": "PAT-039",
+      "other": "PAT-040",
+      "names": [
+        "团团圆圆",
+        "万世升平"
+      ]
+    },
+    {
+      "code": "C-ZD-001",
+      "first": "PAT-003",
+      "other": "PAT-041",
+      "names": [
+        "轴对称构图",
+        "轴对称〔复用〕"
+      ]
+    },
+    {
+      "code": "S-HW-075",
+      "first": "PAT-041",
+      "other": "PAT-043",
+      "names": [
+        "张灯结彩",
+        "百鸟朝凤"
+      ]
+    },
+    {
+      "code": "S-HW-076",
+      "first": "PAT-041",
+      "other": "PAT-043",
+      "names": [
+        "光明吉祥",
+        "吉祥美满"
+      ]
+    },
+    {
+      "code": "M-HW-104",
+      "first": "PAT-048",
+      "other": "PAT-049",
+      "names": [
+        "菊花单瓣",
+        "兰花纹整体"
+      ]
+    },
+    {
+      "code": "M-HW-105",
+      "first": "PAT-048",
+      "other": "PAT-049",
+      "names": [
+        "菊花叶",
+        "单朵兰花"
+      ]
+    },
+    {
+      "code": "M-HW-131",
+      "first": "PAT-056",
+      "other": "PAT-058",
+      "names": [
+        "单只凤凰",
+        "鸳鸯纹整体"
+      ]
+    },
+    {
+      "code": "M-HW-132",
+      "first": "PAT-056",
+      "other": "PAT-058",
+      "names": [
+        "凤凰头部",
+        "莲花"
+      ]
+    }
+  ],
+  "errors": [],
+  "issues": [
+    {
+      "pattern": "PAT-005",
+      "issues": [
+        {
+          "code": "M-XQ-022",
+          "source": "table:0/row:3/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    },
+    {
+      "pattern": "PAT-006",
+      "issues": [
+        {
+          "code": "M-CZ-021",
+          "source": "table:0/row:2/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    },
+    {
+      "pattern": "PAT-008",
+      "issues": [
+        {
+          "code": "M-FK-022",
+          "source": "table:0/row:3/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    },
+    {
+      "pattern": "PAT-009",
+      "issues": [
+        {
+          "code": "M-ZX-022",
+          "source": "table:0/row:3/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    },
+    {
+      "pattern": "PAT-017",
+      "issues": [
+        {
+          "code": "M-LX-036",
+          "source": "table:0/row:2/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    },
+    {
+      "pattern": "PAT-038",
+      "issues": [
+        {
+          "code": "M-HW-068",
+          "source": "table:0/row:1/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        },
+        {
+          "code": "M-HW-069",
+          "source": "table:0/row:2/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    },
+    {
+      "pattern": "PAT-040",
+      "issues": [
+        {
+          "code": "M-HW-069",
+          "source": "table:0/row:1/cell:2",
+          "message": "矢量化失败：前景比例异常"
+        }
+      ]
+    }
+  ]
+}

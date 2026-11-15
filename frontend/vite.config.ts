@@ -1,0 +1,1 @@
+import {defineConfig} from 'vite';import vue from '@vitejs/plugin-vue';export default defineConfig({plugins:[vue()],build:{assetsDir:'app-assets'},server:{proxy:{'/api':'http://127.0.0.1:8000','/assets':'http://127.0.0.1:8000','/import-assets':'http://127.0.0.1:8000'}}});

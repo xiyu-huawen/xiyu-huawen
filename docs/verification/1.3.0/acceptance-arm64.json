@@ -1,0 +1,16 @@
+{
+  "architecture": "arm64",
+  "project": "xiyu-qa-arm64-174f8e",
+  "status": "passed",
+  "checks": [
+    "clean volume startup",
+    "60 documents",
+    "local image and font assets",
+    "SVG/PNG export",
+    "favorite persistence after restart",
+    "consistent backup",
+    "restore to independent volume",
+    "contemporary asset, editable recipe and source lineage persistence"
+  ],
+  "design": "XY-8E942D8344FC"
+}

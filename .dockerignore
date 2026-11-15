@@ -1,0 +1,12 @@
+.venv
+**/node_modules
+frontend/dist
+runtime
+.git
+outputs
+docs
+tests
+logs
+原始内容
+assets
+.env

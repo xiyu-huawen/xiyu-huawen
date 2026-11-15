@@ -1,0 +1,16 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+python-multipart==0.0.20
+Pillow==11.2.1
+vtracer==0.6.12
+cairosvg==2.7.1
+httpx==0.28.1
+pytest==8.3.5
+
+shapely==2.1.2
+svgelements==1.9.6
+numpy==2.2.6
+
+ezdxf==1.4.4
+fonttools==4.60.1
+pyparsing==3.2.5

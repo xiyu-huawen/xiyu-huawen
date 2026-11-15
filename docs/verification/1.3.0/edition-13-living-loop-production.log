@@ -1,0 +1,20 @@
+### Result
+{"citations":1,"article":"weihai-tin","asset":"UGC-1B369108216D","sourceDesign":"XY-567C3E94579C","editableShapes":1,"knowledgeInherited":1,"reusedPattern":"UGC-1B369108216D","template":"original","factoryStatus":200,"errors":[]}
+### Ran Playwright code
+```js
+await (async(page)=>{
+ await page.goto('http://localhost:8098/#knowledge');await page.setViewportSize({width:1440,height:1000});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.locator('.article-card').filter({hasText:'锡光落在紫砂上'}).click();await page.getByRole('dialog').waitFor();const citations=await page.getByRole('dialog').locator('a[href^="https://"]').count();await page.getByRole('button',{name:'带着理解，试着造物 ↗',exact:true}).click();await page.locator('.composer-panel').waitFor({timeout:30000});
+ const seed=await page.evaluate(()=>JSON.parse(localStorage.getItem('xiyu-theatre')));if(!seed.knowledge_refs?.some(a=>a.id==='weihai-tin'))throw Error('knowledge not captured');
+ await page.getByRole('button',{name:'以当前纹样继续创作 ↗',exact:true}).click();await page.locator('.original-studio').waitFor();await page.locator('.original-seed-note').waitFor();await page.getByRole('button',{name:'花瓣',exact:true}).click();await page.getByRole('button',{name:'4向',exact:true}).click();
+ const board=page.getByRole('img',{name:'自由纹样创作画布',exact:true});await board.scrollIntoViewIfNeeded();const b=await board.boundingBox();await page.mouse.move(b.x+b.width*.47,b.y+b.height*.25);await page.mouse.down();await page.mouse.move(b.x+b.width*.58,b.y+b.height*.4,{steps:12});await page.mouse.up();
+ await page.getByPlaceholder('给你的纹样起一个名字').fill('锡光续纹');await page.getByPlaceholder('记录灵感、构图想法或希望表达的当代寓意').fill('沿威海锡镶知识与原图元，以四向花瓣补充新的当代构图。');await page.locator('.original-rights input').check();const saved=page.waitForResponse(r=>r.url().endsWith('/api/community/patterns')&&r.request().method()==='POST');await page.getByRole('button',{name:'入库为当代创作 →',exact:true}).click();const response=await saved;const asset=await response.json();if(response.status()!==201)throw Error(JSON.stringify(asset));if(!asset.knowledge_refs?.some(a=>a.id==='weihai-tin'))throw Error('knowledge lost onasset');
+ await page.getByRole('button',{name:'到创作库查看 ↗',exact:true}).click();await page.locator('.community-card').filter({hasText:asset.name}).getByRole('button',{name:'用于器物设计 ↗',exact:true}).first().click();await page.locator('.composer-panel').waitFor();const reused=await page.evaluate(()=>JSON.parse(localStorage.getItem('xiyu-theatre')));if(reused.pattern!==asset.id||!reused.knowledge_refs?.length)throw Error('reuse/provenance lost');
+ await page.locator('.theatre-progress button').nth(4).click();const link=page.getByRole('link',{name:'下载工坊工程包 · DXF',exact:true});await link.waitFor();await page.waitForTimeout(250);const href=await link.getAttribute('href');const zip=await page.request.get(new URL(href,page.url()).href);await page.locator('.final-work').screenshot({path:'output/playwright/living-provenance-reuse.png'});
+ return{citations,article:'weihai-tin',asset:asset.id,sourceDesign:asset.source_design_id,editableShapes:asset.editor_state.shapes.length,knowledgeInherited:asset.knowledge_refs.length,reusedPattern:reused.pattern,template:reused.recipe.template,factoryStatus:zip.status(),errors};
+}
+)(page);
+```
+### Page
+- Page URL: http://localhost:8098/#XY-25696BC335CD
+- Page Title: 锡语华纹 · 让中国祝福，入器成纹
