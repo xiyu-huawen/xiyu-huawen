@@ -1,42 +1,39 @@
-# Fly.io 部署
+# PythonAnywhere 免费部署
 
-## 当前资源
+## 当前服务
 
-- 应用：`xiyu-huawen`
-- 地址：`https://xiyu-huawen.fly.dev`
-- 区域：新加坡 `sin`
-- 持久卷：`xiyu_data`，挂载到 `/data`
-- 容器：Nginx + FastAPI，内部端口 `8080`
-- 实例：固定 1 台，SQLite 与单卷挂载不启用多副本
-- 挂载：通过 `fly.toml` 的 `[mounts]` 配置，卷附加到生产机器
+- 网站：`https://xiyuhuawen.pythonanywhere.com`
+- PythonAnywhere 用户：`xiyuhuawen`
+- 运行时：Python 3.11 + FastAPI + a2wsgi
+- 源码目录：`/home/xiyuhuawen/site`
+- 虚拟环境：`/home/xiyuhuawen/.virtualenvs/xiyu-venv`
+- WSGI 配置：`/var/www/xiyuhuawen_pythonanywhere_com_wsgi.py`
+- 持久数据：`/home/xiyuhuawen/site/runtime`（SQLite、收藏、共创资产与打样需求）
+- 静态前端：`/home/xiyuhuawen/site/frontend/dist`
 
-## 更新发布
+## 免费额度与续期
 
-```bash
-../.runtime/fly/flyctl deploy --remote-only --app xiyu-huawen
-```
-
-前端在远程构建阶段执行 `npm ci && npm run build`。后端使用 `backend/requirements.lock` 安装依赖。
-
-## 管理密码
-
-管理密码只保存在 Fly Secrets，不进入源码或镜像。需要重置时执行：
-
-```bash
-../.runtime/fly/flyctl secrets set ADMIN_PASSWORD='替换为新的强随机密码' --app xiyu-huawen
-```
+当前服务使用 PythonAnywhere 免费账户，不绑定银行卡。免费账户的磁盘配额为 512 MB，本次部署约占 421 MB。免费网站有到期时间，当前控制台显示为 **2026-12-15**；到期前需要在 Web 控制台点击续期/延长，才能继续保持免费运行。未续期会停止服务，这不是代码故障。
 
 ## 运行检查
 
 ```bash
-curl https://xiyu-huawen.fly.dev/api/health
-../.runtime/fly/flyctl status --app xiyu-huawen
-../.runtime/fly/flyctl logs --app xiyu-huawen
+curl https://xiyuhuawen.pythonanywhere.com/api/health
 ```
 
-持久卷包含设计、收藏、共创资产与打样需求。删除应用或卷会同时删除这些数据，操作前必须另行备份。
+正常响应为 `{"status":"ok","patterns":60}`。网站重载后收藏数据仍保存在 SQLite 中。
 
-## 浮雕几何回归
+## 更新发布
+
+PythonAnywhere 免费环境没有 Node.js，前端需在本机执行 `npm ci && npm run build`，再将 `frontend/dist` 上传并覆盖到上述目录。后端源码和 `seed` 资源同步后，在 Web 控制台点击 **Reload**。
+
+部署适配器位于 `deploy/pythonanywhere_wsgi.py`。事件循环必须在 uWSGI 工作进程收到首个请求时才创建，不能在主进程导入阶段创建，否则 fork 后公网请求会卡住。
+
+## 管理密码与 API 凭据
+
+后台密码只写入服务器的 WSGI 配置，不进入 GitHub、前端或本地 `.env`。修改后需要 Reload。PythonAnywhere API Token 仅用于部署操作，部署完成后应撤销并在下次需要时重新生成。
+
+## 几何与导出回归
 
 ```bash
 cd frontend
@@ -45,4 +42,4 @@ npm run test:geometry:all
 npm run build
 ```
 
-全量检查覆盖所有可复用矢量资产的实体生成、嵌套轮廓、粗描边展开、重复点清理和坐标有效性。DXF 由后端原始 SVG 轮廓生成，不经过 Three.js 浮雕网格。
+本次公网验收已覆盖：首页与 3D 预览、60 类纹样目录、设计生成、收藏及 Reload 后持久化、SVG/PNG 导出、DXF 工程包和 STL 导出。DXF 仍由后端原始 SVG 轮廓生成，不经过 Three.js 浮雕网格。
