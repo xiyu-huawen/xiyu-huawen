@@ -33,6 +33,10 @@ PythonAnywhere 免费环境没有 Node.js，前端需在本机执行 `npm ci && 
 
 后台密码只写入服务器的 WSGI 配置，不进入 GitHub、前端或本地 `.env`。修改后需要 Reload。PythonAnywhere API Token 仅用于部署操作，部署完成后应撤销并在下次需要时重新生成。
 
+## 生成性能
+
+`read_geometry` 使用 `seg.npoint()` 按曲线段批量采样，避免逐点重复计算；无效轮廓才执行拓扑修复。方案比较仍以 24 个候选进行筛选，但仅使用 2 段曲线采样计算指标，最终选中的方案恢复 12 段精度生成 SVG、DXF 和 STL，交付结果不降级。
+
 ## 几何与导出回归
 
 ```bash

@@ -5,7 +5,7 @@ from shapely.geometry import Polygon,Point,box
 from shapely.ops import unary_union
 from shapely import make_valid
 
-def read_geometry(svg):
+def read_geometry(svg,curve_steps=12):
  original_header=svg[:svg.index('>')+1]
  import re
  normalized=re.sub(r'width="[^"]+"','width="1000"',svg,count=1);normalized=re.sub(r'height="[^"]+"','height="1000"',normalized,count=1)
@@ -17,26 +17,29 @@ def read_geometry(svg):
    points=[]
    for seg in sub:
     if seg.__class__.__name__=='Move':continue
-    steps=2 if seg.__class__.__name__ in ('Line','Close') else 12
-    points.extend((seg.point(i/steps).x,seg.point(i/steps).y) for i in range(steps+1))
+    steps=2 if seg.__class__.__name__ in ('Line','Close') else curve_steps
+    points.extend((point[0],point[1]) for point in seg.npoint([i/steps for i in range(steps+1)]))
    if len(points)<3:continue
-   poly=make_valid(Polygon(points))
+   poly=Polygon(points)
+   if not poly.is_valid:poly=make_valid(poly)
    shape=poly if shape is None else shape.symmetric_difference(poly)
   if shape is not None and not shape.is_empty:parts.append(shape)
  if not parts:raise ValueError('没有可合成的闭合轮廓')
- geometry=make_valid(unary_union(parts))
+ geometry=unary_union(parts)
+ if not geometry.is_valid:geometry=make_valid(geometry)
  return geometry,len(parts)
 
-def compose_boolean(svg,mode):
+def compose_boolean(svg,mode,curve_steps=12):
  original_header=svg[:svg.index('>')+1]
- geometry,source_count=read_geometry(svg)
+ geometry,source_count=read_geometry(svg,curve_steps)
+ detail=96
  if mode=='negative':
-  envelope=Point(500,500).buffer(465,quad_segs=96)
+  envelope=Point(500,500).buffer(465,quad_segs=detail)
   if not envelope.covers(geometry):envelope=box(25,25,975,975).buffer(10)
   geometry=envelope.difference(geometry)
  if mode=='sparse':
-  outer=Point(500,500).buffer(462,quad_segs=96)
-  inner=Point(500,500).buffer(444,quad_segs=96)
+  outer=Point(500,500).buffer(462,quad_segs=detail)
+  inner=Point(500,500).buffer(444,quad_segs=detail)
   if outer.covers(geometry):
    support=outer.difference(inner)
   else:

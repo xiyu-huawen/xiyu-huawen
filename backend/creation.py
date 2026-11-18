@@ -44,11 +44,13 @@ def directions(brief:Brief):
   variants=[]
   for vi in range(8):
    variant_scale=max(.3,min(1.2,scale+(vi%4-1)*.07));variant_count=max(4,min(16,count+(vi//4)*2));variant_spacing=max(.6,min(1.5,spacing+(vi%3-1)*.08))
-   d=create_design(Recipe(recipient=brief.recipient,mood=brief.mood,personal_note=brief.personal_note,anchor=anchor,direction=name,geometry_mode='sparse' if name=='疏朗留白' else 'union',prompt=brief.wish,pattern_id=p['id'],vessel=brief.vessel,auto_match=False,layers=layers,scale=variant_scale,count=variant_count,spacing=variant_spacing,width_mm=VESSELS[brief.vessel][2],height_mm=VESSELS[brief.vessel][3]),persist=False)
+   recipe=Recipe(recipient=brief.recipient,mood=brief.mood,personal_note=brief.personal_note,anchor=anchor,direction=name,geometry_mode='sparse' if name=='疏朗留白' else 'union',prompt=brief.wish,pattern_id=p['id'],vessel=brief.vessel,auto_match=False,layers=layers,scale=variant_scale,count=variant_count,spacing=variant_spacing,width_mm=VESSELS[brief.vessel][2],height_mm=VESSELS[brief.vessel][3])
+   candidate=create_design(recipe,persist=False,geometry_steps=2)
    target=.9 if name=='疏朗留白' else .86
-   metric=abs(d['operation_graph']['negative_space']-target)
-   variants.append((metric,d))
-  d=min(variants,key=lambda v:v[0])[1];d['explored_candidates']=24
+   metric=abs(candidate['operation_graph']['negative_space']-target)
+   variants.append((metric,recipe))
+  best_recipe=min(variants,key=lambda v:v[0])[1]
+  d=create_design(best_recipe,persist=False);d['explored_candidates']=24
 
   d.update(direction=name,strategy=strategy,rationale=('本次寓意依据：' if matches[0][0]>0 else '本次图元来源：')+g['name']+'；'+strategy)
   import json

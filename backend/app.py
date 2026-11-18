@@ -104,7 +104,7 @@ class Recipe(BaseModel):
  width_mm:int=Field(default=120,ge=20,le=400)
  height_mm:int=Field(default=120,ge=20,le=400)
 
-def create_design(r,persist=True):
+def create_design(r,persist=True,geometry_steps=12):
  cat=catalog(); scored=[]
  references=json.loads((SEED/'knowledge_sources.json').read_text()) if (SEED/'knowledge_sources.json').exists() else []
  knowledge_index={a['id']:a for a in references}
@@ -156,7 +156,7 @@ def create_design(r,persist=True):
  body['svg']=compose(body)
  if r.geometry_mode!='assemble':
   from .geometry import compose_boolean
-  try:body['svg'],body['operation_graph']=compose_boolean(body['svg'],r.geometry_mode)
+  try:body['svg'],body['operation_graph']=compose_boolean(body['svg'],r.geometry_mode,geometry_steps)
   except Exception as e:raise HTTPException(422,'几何合成失败：'+str(e))
   body['operation_graph']['sources']=[dict(pattern=g['pattern'],code=g['code'],asset_version=g['asset']['version'],role=g['role']) for g in chosen]
   body['operation_graph']['output_hash']=hashlib.sha256(body['svg'].encode()).hexdigest()
