@@ -176,7 +176,7 @@ async function begin(){
  });
 }
 
-function select(d:any){
+function select(d:any,addHistory=true){
  selected.value=d;
  shape.value=d.recipe.vessel_shape||'standard';
  if(vessel.value && d.recipe.vessel!==vessel.value){
@@ -188,11 +188,24 @@ function select(d:any){
   vessel.value=d.recipe.vessel||vessel.value;
  }
  writeLocal('xiyu-user-vessel',vessel.value);
- history.value=history.value.slice(0,cursor.value+1);
- history.value.push(JSON.parse(JSON.stringify(d)));
- if(history.value.length>20)history.value.shift();
- cursor.value=history.value.length-1;
+ if(addHistory){
+  history.value=history.value.slice(0,cursor.value+1);
+  history.value.push(JSON.parse(JSON.stringify(d)));
+  if(history.value.length>20)history.value.shift();
+  cursor.value=history.value.length-1;
+ }else if(cursor.value>=0)history.value[cursor.value]=JSON.parse(JSON.stringify(d));
  writeLocal('xiyu-theatre',JSON.stringify(d));
+ if(d.preview_detail==='draft'){
+  const draftId=d.id;
+  act(async()=>{
+   const full=await api('/creation/preview',JSON.parse(JSON.stringify(d.recipe)));
+   if(!active||selected.value?.id!==draftId)return;
+   full.direction=d.direction;full.preview_detail='full';
+   const index=candidates.value.findIndex(x=>x.id===draftId);
+   if(index>=0)candidates.value[index]=full;
+   select(full,false);
+  });
+ }
 }
 
 function undo(delta:number){

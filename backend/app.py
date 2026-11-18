@@ -2,6 +2,7 @@ import os,json,sqlite3,uuid,hashlib,math,copy,secrets,threading,io,base64
 from pathlib import Path
 from contextlib import asynccontextmanager
 from fastapi import FastAPI,HTTPException,Header,UploadFile,File,Depends
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel,Field
@@ -40,6 +41,7 @@ async def lifespan(app):
     job.update(status='failed',message='服务重启中断，请重新上传文档');conn.execute('UPDATE jobs SET body=? WHERE id=?',(json.dumps(job,ensure_ascii=False),jid))
  yield
 app=FastAPI(title='锡语华纹',version='1.3.0',lifespan=lifespan)
+app.add_middleware(GZipMiddleware,minimum_size=1000)
 app.mount('/assets',StaticFiles(directory=SEED/'assets'),name='seed-assets')
 app.mount('/import-assets',StaticFiles(directory=ASSETS),name='import-assets')
 def admin(authorization:str=Header(default='')):

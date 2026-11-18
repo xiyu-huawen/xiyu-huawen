@@ -48,9 +48,8 @@ def directions(brief:Brief):
    candidate=create_design(recipe,persist=False,geometry_steps=2)
    target=.9 if name=='疏朗留白' else .86
    metric=abs(candidate['operation_graph']['negative_space']-target)
-   variants.append((metric,recipe))
-  best_recipe=min(variants,key=lambda v:v[0])[1]
-  d=create_design(best_recipe,persist=False);d['explored_candidates']=24
+   variants.append((metric,recipe,candidate))
+  d=min(variants,key=lambda v:v[0])[2];d['explored_candidates']=24;d['preview_detail']='draft'
 
   d.update(direction=name,strategy=strategy,rationale=('本次寓意依据：' if matches[0][0]>0 else '本次图元来源：')+g['name']+'；'+strategy)
   import json
